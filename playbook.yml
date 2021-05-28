@@ -27,3 +27,7 @@
      service:
        name: tomcat
        state: restarted
+   - name: copy Artifacts from nexus 
+     get_url:
+       url: http://54.188.51.117:8081/nexus/service/local/repositories/gol/content/Dev/Dev/$Build_ID/Dev-$Build_ID.war
+       dest: /usr/share/tomcat/webapps
