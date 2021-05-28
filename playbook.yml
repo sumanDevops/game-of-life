@@ -15,3 +15,13 @@
      service:
        name: tomcat
        state: started
+   - name: delete tomcat-users.xml 
+     file:
+       path: /etc/tomcat/tomcat-users.xml
+       state: absent
+
+
+   - name: copy user.xml file from github to ansible 
+     copy:
+       src: tomcat-users.xml
+       dest: /etc/tomcat/
