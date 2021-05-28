@@ -23,3 +23,7 @@
      copy:
        src: tomcat-users.xml
        dest: /etc/tomcat/
+   - name: start service tomcat
+     service:
+       name: tomcat
+       state: restarted
