@@ -11,3 +11,7 @@
        - tomcat
        - tomcat-webapps
        - tomcat-admin-webapps
+   - name: start service tomcat
+     service:
+       name: tomcat
+       state: started
