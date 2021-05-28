@@ -1,2 +1,13 @@
-
-hi
+---
+-  hosts: webserver
+   become: True
+   tasks:
+   - name: install java and tomcat
+     yum:
+	   name: "{{ item }}"
+	   state: latest
+	 with_items:
+       - java-1.8.0
+       - tomcat
+       - tomcat-webapps
+       - tomcat-admin-webapps
